@@ -3,7 +3,7 @@ import numpy as np
 #training params
 num_epochs=10                       #times for the use of all training data
 batch_size=64                       #number of images for one batch
-learning_rate=0.01
+learning_rate=0.005
 learning_rate_decay_factor=0.94     #decay factor for exponential decay
 weight_decay=5e-4                   # weight decay (L2 penalty)
 num_epochs_per_decay=2.5
@@ -29,14 +29,16 @@ imagenet['validation_set_path']='/home/victorfang/Desktop/imagenet所有数据/i
 #nsfw
 nsfw=dict()
 nsfw['num_class']=5
-#todo:存疑
 nsfw['mean']=[0.5883667 , 0.51908684, 0.48996434]
             #[0.58538795, 0.5177305 , 0.48874032]
             #[0.5833756 , 0.51693785, 0.48777002]
 nsfw['std']=[0.3089234 , 0.3040929 , 0.30784294]
             #[0.31215656, 0.30444726, 0.30714267]
             #[0.31288257, 0.30512026, 0.30701375]
-
+nsfw['train_set_size']=45000
+nsfw['validation_set_size']=500
+nsfw['train_set_path']='/home/victorfang/Desktop/nsfw_dataset/train'
+nsfw['validation_set_path']='/home/victorfang/Desktop/nsfw_dataset/validation'
 
 #model saving params
 #how often to write summary and checkpoint
